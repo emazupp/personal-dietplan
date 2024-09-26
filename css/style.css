@@ -5,25 +5,61 @@
   box-sizing: border-box;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 /* utils */
 
+:root {
+  --padding-size: 35px;
+}
 .container {
-  width: 1vw;
+  width: 100%;
   margin: 0 auto;
-  max-width: 100%;
+  padding: 0px 20px;
 }
 
 /* header */
 
 .header {
-  height: 100px;
-  background-color: grey;
-  border: 1px solid black;
+  padding-top: 35px;
 }
 
-.header-menu {
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  border: 1px solid black;
+.header-item {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1em;
 }
+
+/* food type radio */
+.food-type {
+  padding-top: var(--padding-size);
+  display: flex;
+  gap: 40px;
+}
+
+.food-type > div > label {
+  font-size: 2.5em;
+}
+
+.underbar-food-type {
+  height: 0.2em;
+  width: 100%;
+  background-color: red;
+  margin-top: 5px;
+  border-radius: 10px;
+  display: none;
+}
+
+.food-type-selector[type="radio"]:checked + .underbar-food-type {
+  display: block;
+}
+
+.food-type-pasti {
+}
+
+/* .debug * {
+  border: 1px dashed black;
+  background-color: grey;
+} */

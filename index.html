@@ -7,16 +7,51 @@
     <meta name="description" content="" />
     <meta name="keyword" content="" />
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Diet</title>
+    <title>Personal Diet</title>
   </head>
 
-  <body>
+  <body class="debug">
     <header class="header">
+      <div class="header-item">
+        <span>Giorno 1 <i class="fa-solid fa-chevron-down fa-sm"></i></span>
+      </div>
       <div class="container">
-        <div class="header-menu"></div>
+        <div class="food-type">
+          <!-- RADIO BUTTON PASTI -->
+          <div class="food-type-pasti">
+            <label for="food-type-pasti">Pasti</label>
+            <input
+              type="radio"
+              name="food-type"
+              id="food-type-pasti"
+              class="food-type-selector"
+              checked
+            />
+            <div class="underbar-food-type"></div>
+          </div>
+          <!-- RADIO BUTTON MERENDA -->
+          <div class="food-type-merenda">
+            <label for="food-type-merenda">Merenda</label>
+            <input
+              type="radio"
+              name="food-type"
+              id="food-type-merenda"
+              class="food-type-selector"
+            />
+            <div class="underbar-food-type"></div>
+          </div>
+        </div>
       </div>
     </header>
+
     <main></main>
   </body>
 </html>
