@@ -56,10 +56,21 @@ input[type="radio"] {
   display: block;
 }
 
-.food-type-pasti {
+/* main */
+
+.food-bottom-selector {
+  padding-top: var(--padding-size);
+  display: flex;
+  gap: 10px;
 }
 
-/* .debug * {
+.food-bottom-selector > div {
+  border: 1px solid black;
+  padding: 16px 14px;
+  border-radius: 20px;
+}
+
+.food-bottom-selector/* .debug * {
   border: 1px dashed black;
   background-color: grey;
-} */
+} */;
