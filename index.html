@@ -14,6 +14,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
     <title>Personal Diet</title>
   </head>
@@ -24,29 +31,45 @@
         <span>Giorno 1 <i class="fa-solid fa-chevron-down fa-sm"></i></span>
       </div>
       <div class="container">
-        <div class="food-type">
-          <!-- RADIO BUTTON PASTI -->
-          <div class="food-type-pasti">
-            <label for="food-type-pasti">Pasti</label>
-            <input
-              type="radio"
-              name="food-type"
-              id="food-type-pasti"
-              class="food-type-selector"
-              checked
-            />
-            <div class="underbar-food-type"></div>
+        <div class="food-types">
+          <!-- pasti - upper selection food type -->
+          <div class="food-type" id="food-type-pasti">
+            <p>Pasti</p>
+            <div class="underbar" id="underbar-pasti"></div>
           </div>
-          <!-- RADIO BUTTON MERENDA -->
-          <div class="food-type-merenda">
-            <label for="food-type-merenda">Merenda</label>
-            <input
-              type="radio"
-              name="food-type"
-              id="food-type-merenda"
-              class="food-type-selector"
-            />
-            <div class="underbar-food-type"></div>
+
+          <!-- merenda - upper selection food type -->
+          <div class="food-type" id="food-type-merenda">
+            <p>Merenda</p>
+            <div class="underbar" id="underbar-merenda"></div>
+          </div>
+        </div>
+
+        <!-- food bottom selector -->
+        <div class="food-bottom-selector">
+          <div class="bottom-selector">
+            <span
+              ><i
+                class="food-bottom-icon fa-solid fa-bowl-food bottom-selector-icon"
+              ></i>
+              Pranzo</span
+            >
+          </div>
+          <div class="bottom-selector">
+            <span
+              ><i
+                class="food-bottom-icon fa-solid fa-utensils bottom-selector-icon"
+              ></i>
+              Cena</span
+            >
+          </div>
+          <div class="bottom-selector">
+            <span
+              ><i
+                class="food-bottom-icon fa-solid fa-mug-hot bottom-selector-icon"
+              ></i>
+              Colazione</span
+            >
           </div>
         </div>
       </div>
@@ -54,18 +77,72 @@
 
     <main>
       <div class="container">
-        <div class="food-bottom-selector">
-          <div class="first-element">
-            <span><i class="fa-solid fa-bowl-food"></i> Pranzo</span>
+        <!-- main food card -->
+        <div class="cards-container">
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
           </div>
-          <div class="second-element">
-            <span><i class="fa-solid fa-utensils"></i> Cena</span>
+
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
           </div>
-          <div class="third-element">
-            <span><i class="fa-solid fa-mug-hot"></i> Colazione</span>
+
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
           </div>
+
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
+          </div>
+
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
+          </div>
+
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">Pesce spada</span>
+              <span class="ingredients-grams">200g</span>
+            </div>
+            <div class="card-ingredients-image">
+              <img src="./img/5650776.png" alt="pizza" />
+            </div>
+          </div>
+
+          <div class="invisible-margin"></div>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

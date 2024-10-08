@@ -5,58 +5,76 @@
   box-sizing: border-box;
 }
 
-input[type="radio"] {
+/* input[type="radio"] {
   display: none;
-}
+} */
 
 /* utils */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: var(--padding-size);
+  height: 100vh;
+  overflow: hidden;
+}
 
 :root {
   --padding-size: 35px;
 }
 .container {
-  width: 100%;
   margin: 0 auto;
   padding: 0px 20px;
+}
+
+img {
+  display: block;
+}
+
+.i-white {
+  color: #fff;
 }
 
 /* header */
 
 .header {
-  padding-top: 35px;
+  height: 30vh;
 }
 
 .header-item {
   margin: 0 auto;
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
-/* food type radio */
-.food-type {
+/* upper selection */
+.food-types {
   padding-top: var(--padding-size);
   display: flex;
-  gap: 40px;
+  gap: 20px;
 }
 
-.food-type > div > label {
-  font-size: 2.5em;
+.food-types > div > p {
+  font-size: 2em;
 }
 
-.underbar-food-type {
-  height: 0.2em;
+.underbar {
+  height: 0.25em;
   width: 100%;
   background-color: red;
-  margin-top: 5px;
-  border-radius: 10px;
-  display: none;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.25s;
 }
 
-.food-type-selector[type="radio"]:checked + .underbar-food-type {
+.underbar-activated {
+  opacity: 1;
+}
+
+/* .food-type-selector[type="radio"]:checked + .underbar-food-type {
   display: block;
-}
-
-/* main */
+} */
 
 .food-bottom-selector {
   padding-top: var(--padding-size);
@@ -64,13 +82,75 @@ input[type="radio"] {
   gap: 10px;
 }
 
-.food-bottom-selector > div {
-  border: 1px solid black;
-  padding: 16px 14px;
+.bottom-selector {
+  border: 1px solid #555;
+  padding: 12px 14px;
   border-radius: 20px;
+  color: #555;
+  opacity: 0.5;
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
-.food-bottom-selector/* .debug * {
-  border: 1px dashed black;
-  background-color: grey;
-} */;
+.bottom-selector-selected {
+  border: 1px solid #ffcc00;
+  background-color: #ffcc00;
+  color: #212121;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* main */
+
+.cards-container {
+  padding-top: var(--padding-size);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 70vh;
+}
+
+.card-single-ingredients {
+  display: flex;
+  width: 95%;
+  height: 100px;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px darkgrey;
+  margin-bottom: var(--padding-size);
+}
+
+.card-ingredients-description {
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+.card-ingredients-description > span {
+  display: block;
+}
+
+.card-ingredients-image {
+  width: 170px;
+  height: 150px;
+  position: absolute;
+  left: 55%;
+  bottom: -7%;
+}
+
+.card-ingredients-image > img {
+  width: 100%;
+}
+
+.card-ingredients-description > .ingrediens-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #212121;
+}
+
+.card-ingredients-description > .ingredients-grams {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.invisible-margin {
+  height: 100px;
+}
