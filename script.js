@@ -2,6 +2,9 @@ let foodTypePasti = document.getElementById("food-type-pasti");
 let foodTypeMerenda = document.getElementById("food-type-merenda");
 let underbarPasti = document.getElementById("underbar-pasti");
 let underbarMerenda = document.getElementById("underbar-merenda");
+let daysContainer = document.getElementById("days-container");
+let daySelector = document.getElementById("day-selector");
+let wrapper = document.getElementById("wrapper");
 let foodBottomSelector = document.querySelectorAll(".bottom-selector");
 let foodBottomIcon = document.querySelectorAll(".food-bottom-icon");
 
@@ -45,4 +48,18 @@ foodBottomSelector[2].addEventListener("click", function () {
   foodBottomIcon[0].classList.remove("i-white");
   foodBottomIcon[1].classList.remove("i-white");
   foodBottomIcon[2].classList.add("i-white");
+});
+
+/* days container display block */
+
+daySelector.addEventListener("click", function () {
+  if (daysContainer.classList.contains("hide")) {
+    daysContainer.classList.add("show");
+    daysContainer.classList.remove("hide");
+    wrapper.classList.add("hide");
+  } else {
+    daysContainer.classList.add("hide");
+    daysContainer.classList.remove("show");
+    wrapper.classList.remove("hide");
+  }
 });

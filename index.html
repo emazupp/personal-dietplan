@@ -25,124 +25,139 @@
     <title>Personal Diet</title>
   </head>
 
-  <body class="debug">
-    <header class="header">
-      <div class="header-item">
-        <span>Giorno 1 <i class="fa-solid fa-chevron-down fa-sm"></i></span>
+  <body>
+    <div class="header-item">
+      <span id="day-selector"
+        >Giorno 1 <i class="fa-solid fa-chevron-down fa-sm"></i
+      ></span>
+      <div id="days-container" class="header-item hide">
+        <span class="day" id="">Giorno 2</span>
+        <span class="day" id="">Giorno 3</span>
+        <span class="day" id="">Giorno 4</span>
+        <span class="day" id="">Giorno 5</span>
+        <span class="day" id="">Giorno 6</span>
+        <span class="day" id="">Giorno 7</span>
+        <span class="day" id="">Giorno 8</span>
+        <span class="day" id="">Giorno 9</span>
+        <span class="day" id="">Giorno 10</span>
       </div>
-      <div class="container">
-        <div class="food-types">
-          <!-- pasti - upper selection food type -->
-          <div class="food-type" id="food-type-pasti">
-            <p>Pasti</p>
-            <div class="underbar" id="underbar-pasti"></div>
+    </div>
+    <div id="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="food-types">
+            <!-- pasti - upper selection food type -->
+            <div class="food-type" id="food-type-pasti">
+              <p>Pasti</p>
+              <div class="underbar" id="underbar-pasti"></div>
+            </div>
+
+            <!-- merenda - upper selection food type -->
+            <div class="food-type" id="food-type-merenda">
+              <p>Merenda</p>
+              <div class="underbar" id="underbar-merenda"></div>
+            </div>
           </div>
 
-          <!-- merenda - upper selection food type -->
-          <div class="food-type" id="food-type-merenda">
-            <p>Merenda</p>
-            <div class="underbar" id="underbar-merenda"></div>
+          <!-- food bottom selector -->
+          <div class="food-bottom-selector">
+            <div class="bottom-selector">
+              <span
+                ><i
+                  class="food-bottom-icon fa-solid fa-bowl-food bottom-selector-icon"
+                ></i>
+                Pranzo</span
+              >
+            </div>
+            <div class="bottom-selector">
+              <span
+                ><i
+                  class="food-bottom-icon fa-solid fa-utensils bottom-selector-icon"
+                ></i>
+                Cena</span
+              >
+            </div>
+            <div class="bottom-selector">
+              <span
+                ><i
+                  class="food-bottom-icon fa-solid fa-mug-hot bottom-selector-icon"
+                ></i>
+                Colazione</span
+              >
+            </div>
           </div>
         </div>
+      </header>
 
-        <!-- food bottom selector -->
-        <div class="food-bottom-selector">
-          <div class="bottom-selector">
-            <span
-              ><i
-                class="food-bottom-icon fa-solid fa-bowl-food bottom-selector-icon"
-              ></i>
-              Pranzo</span
-            >
-          </div>
-          <div class="bottom-selector">
-            <span
-              ><i
-                class="food-bottom-icon fa-solid fa-utensils bottom-selector-icon"
-              ></i>
-              Cena</span
-            >
-          </div>
-          <div class="bottom-selector">
-            <span
-              ><i
-                class="food-bottom-icon fa-solid fa-mug-hot bottom-selector-icon"
-              ></i>
-              Colazione</span
-            >
+      <main>
+        <div class="container">
+          <!-- main food card -->
+          <div class="cards-container">
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="card-single-ingredients">
+              <div class="card-ingredients-description">
+                <span class="ingrediens-title">Pesce spada</span>
+                <span class="ingredients-grams">200g</span>
+              </div>
+              <div class="card-ingredients-image">
+                <img src="./img/5650776.png" alt="pizza" />
+              </div>
+            </div>
+
+            <div class="invisible-margin"></div>
           </div>
         </div>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <!-- main food card -->
-        <div class="cards-container">
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="card-single-ingredients">
-            <div class="card-ingredients-description">
-              <span class="ingrediens-title">Pesce spada</span>
-              <span class="ingredients-grams">200g</span>
-            </div>
-            <div class="card-ingredients-image">
-              <img src="./img/5650776.png" alt="pizza" />
-            </div>
-          </div>
-
-          <div class="invisible-margin"></div>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
