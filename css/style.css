@@ -37,14 +37,6 @@ img {
   color: #fff;
 }
 
-.d-none {
-  display: none;
-}
-
-.d-block {
-  display: block;
-}
-
 /* header */
 
 .header {
@@ -75,6 +67,12 @@ img {
   justify-content: center;
 }
 
+.day-selector-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #days-container {
   display: flex;
   flex-direction: column;
@@ -82,7 +80,7 @@ img {
   font-size: calc(10px + 2vh);
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 10%);
+  transform: translate(-50%, 5%);
   max-height: 0px;
   overflow: hidden;
   z-index: 1;
@@ -100,12 +98,20 @@ img {
 }
 
 .day {
-  padding: 0 30px;
-  border: 1px solid black;
+  padding: 0 40px;
 }
 
-.day:active {
-  transform: scale(1.3);
+#fa-chevron-down {
+  transition: transform 0.3s linear;
+}
+
+#fa-chevron-down.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s linear;
+}
+
+.day.active {
+  color: #776ad4;
 }
 
 /* upper selection */
@@ -122,7 +128,7 @@ img {
 .underbar {
   height: 0.25em;
   width: 100%;
-  background-color: red;
+  background-color: #776ad4;
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.25s;
@@ -211,6 +217,16 @@ img {
 
 .invisible-margin {
   height: 100px;
+}
+
+/* cards container hide */
+
+.container > .cards-container.hide {
+  display: none;
+}
+
+.container .card-single-ingredients.hide {
+  display: none;
 }
 
 /* media query */
