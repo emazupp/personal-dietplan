@@ -166,7 +166,7 @@ img {
 
 /* main */
 
-.cards-container {
+#cards-container {
   padding-top: var(--padding-size);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -179,7 +179,7 @@ img {
   height: 100px;
   position: relative;
   border-radius: 20px;
-  box-shadow: 10px 10px 20px darkgrey;
+  box-shadow: 10px 10px 10px darkgrey;
   margin-bottom: var(--padding-size);
 }
 
@@ -217,16 +217,6 @@ img {
 
 .invisible-margin {
   height: 100px;
-}
-
-/* cards container hide */
-
-.container > .cards-container.hide {
-  display: none;
-}
-
-.container .card-single-ingredients.hide {
-  display: none;
 }
 
 /* media query */

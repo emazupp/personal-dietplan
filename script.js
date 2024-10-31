@@ -1,4 +1,5 @@
 // * GET HTML ELEMENTS
+const foodCardsContainer = document.getElementById("cards-container");
 const daysContainer = document.getElementById("days-container");
 const wrapper = document.getElementById("wrapper");
 const daysButton = document.getElementById("day-selector-container");
@@ -59,17 +60,25 @@ const setDaysUnActive = () => {
   }
 };
 
+const clearFoodCardsContent = () => {};
+
 const updateFoodCardsContent = () => {
-  let foodCardHtml = `
-  <div class="card-single-ingredients">
-    <div class="card-ingredients-description">
-      <span class="ingrediens-title">Pesce spada</span>
-      <span class="ingredients-grams">200g</span>
-    </div>
-    <div class="card-ingredients-image">
-      <img src="./img/5650776.png" alt="pizza" />
-    </div>
-  </div>`;
+  clearFoodCardsContent();
+  let foodCardsHtml = "";
+  for (let i = 0; i < lunches[dayIndex].ingredients.length; i++) {
+    foodCardsHtml += `
+    <div class="card-single-ingredients">
+      <div class="card-ingredients-description">
+        <span class="ingrediens-title">${lunches[dayIndex].ingredients[i].name}</span>
+        <span class="ingredients-grams">${lunches[dayIndex].ingredients[i].grams}g</span>
+      </div>
+      <div class="card-ingredients-image">
+        
+      </div>
+    </div>`;
+  }
+  /* <img src="./img/5650776.png" alt="pizza" /> */
+  foodCardsContainer.innerHTML = foodCardsHtml;
 };
 
 const toggleDaysContainer = (status) => {
