@@ -134,7 +134,7 @@ img {
   transition: opacity 0.25s;
 }
 
-.underbar-activated {
+.underbar.activated {
   opacity: 1;
 }
 
