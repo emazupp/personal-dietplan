@@ -156,7 +156,7 @@ img {
   transition: opacity 0.25s;
 }
 
-.bottom-selector-selected {
+.bottom-selector.selected {
   border: 1px solid #ffcc00;
   background-color: #ffcc00;
   color: #212121;
