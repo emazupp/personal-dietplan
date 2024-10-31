@@ -8,7 +8,11 @@ const bottomFoodTypesSelector = document.querySelectorAll(".bottom-selector");
 const dayShowed = document.getElementById("day-selector");
 
 // * FUNCTION DECLARATIONS
-const setDefaultConfig = (upperFoodTypeIndex, bottomFoodTypeIndex) => {
+const setDefaultConfig = (
+  upperFoodTypeIndex,
+  bottomFoodTypeIndex,
+  dayIndex
+) => {
   upperFoodTypesSelector[upperFoodTypeIndex].childNodes[3].classList.add(
     "activated"
   );
@@ -55,10 +59,17 @@ const setDaysUnActive = () => {
   }
 };
 
-const printSelector = () => {
-  console.log(`upperFoodTypeIndex: ${upperFoodTypeIndex}`);
-  console.log(`bottomFoodTypeIndex: ${bottomFoodTypeIndex}`);
-  console.log(`dayIndex: ${dayIndex}`);
+const updateFoodCardsContent = () => {
+  let foodCardHtml = `
+  <div class="card-single-ingredients">
+    <div class="card-ingredients-description">
+      <span class="ingrediens-title">Pesce spada</span>
+      <span class="ingredients-grams">200g</span>
+    </div>
+    <div class="card-ingredients-image">
+      <img src="./img/5650776.png" alt="pizza" />
+    </div>
+  </div>`;
 };
 
 const toggleDaysContainer = (status) => {
@@ -82,6 +93,110 @@ let bottomFoodTypeIndex = 0;
 let dayIndex = 0;
 const days = printDays();
 
+// * OBJECT DECLARATIONS
+const lunches = [
+  {
+    ingredients: [
+      {
+        name: "Risotto alla marinara",
+        grams: 100,
+      },
+      {
+        name: "Gamberetti o vongole",
+        grams: 80,
+      },
+      {
+        name: "Parmigiano",
+        grams: 30,
+      },
+      {
+        name: "Pesce spada",
+        grams: 220,
+      },
+      {
+        name: "Pane",
+        grams: 100,
+      },
+      {
+        name: "Crostata",
+        grams: 160,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta all'uovo",
+        grams: 110,
+      },
+      {
+        name: "Pomodoro",
+        grams: 80,
+      },
+      {
+        name: "Pollo o tacchino",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 130,
+      },
+      {
+        name: "Crostata",
+        grams: 130,
+      },
+    ],
+  },
+];
+const dinners = [
+  {
+    ingredients: [
+      {
+        name: "Omelette",
+        grams: "2 uova",
+      },
+      {
+        name: "Prosciutto cotto",
+        grams: 70,
+      },
+      {
+        name: "Pane",
+        grams: 140,
+      },
+      {
+        name: "Banana",
+        grams: 200,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Vitello",
+        grams: 200,
+      },
+      {
+        name: "Purè di patate",
+        grams: 240,
+      },
+      {
+        name: "Pane",
+        grams: 140,
+      },
+      {
+        name: "Banana",
+        grams: 200,
+      },
+      {
+        name: "Noci",
+        grams: 60,
+      },
+    ],
+  },
+];
+const breakfasts = [];
+const snacks = [];
+
 // * LISTENER
 daysButton.addEventListener("click", () => {
   if (!isDaysShowed) {
@@ -103,7 +218,7 @@ upperFoodTypesSelector.forEach((foodType, index) => {
     setUpperFoodTypeNotSelected();
     foodType.childNodes[3].classList.add("activated");
     upperFoodTypeIndex = index;
-    printSelector();
+    updateFoodCardsContent();
   });
 });
 
@@ -113,10 +228,11 @@ bottomFoodTypesSelector.forEach((foodType, index) => {
     foodType.classList.add("selected");
     setBottomFoodTypeNotSelected(index);
     bottomFoodTypeIndex = index;
-    printSelector();
+    updateFoodCardsContent();
   });
 });
 
+//  GIORNO X = X-1
 days.forEach((day, index) => {
   day.addEventListener("click", () => {
     setDaysUnActive();
@@ -127,9 +243,9 @@ days.forEach((day, index) => {
     showWrapper();
     isDaysShowed = false;
     dayIndex = index;
-    printSelector();
+    updateFoodCardsContent();
   });
 });
 
 // * EXCECUTE
-setDefaultConfig(upperFoodTypeIndex, bottomFoodTypeIndex);
+setDefaultConfig(upperFoodTypeIndex, bottomFoodTypeIndex, dayIndex);
