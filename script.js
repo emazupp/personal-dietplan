@@ -19,6 +19,7 @@ const setDefaultConfig = (
   );
   bottomFoodTypesSelector[bottomFoodTypeIndex].classList.add("selected");
   setDayShowed(dayIndex);
+  days[dayIndex].classList.add("active");
 };
 
 const hideWrapper = () => {
@@ -60,24 +61,66 @@ const setDaysUnActive = () => {
   }
 };
 
-const clearFoodCardsContent = () => {};
+const clearFoodCardsContent = () => {
+  foodCardsContainer.innerHTML = "";
+};
 
 const updateFoodCardsContent = () => {
   clearFoodCardsContent();
   let foodCardsHtml = "";
-  for (let i = 0; i < lunches[dayIndex].ingredients.length; i++) {
-    foodCardsHtml += `
-    <div class="card-single-ingredients">
-      <div class="card-ingredients-description">
-        <span class="ingrediens-title">${lunches[dayIndex].ingredients[i].name}</span>
-        <span class="ingredients-grams">${lunches[dayIndex].ingredients[i].grams}g</span>
-      </div>
-      <div class="card-ingredients-image">
-        
-      </div>
-    </div>`;
+  // CASO PASTI
+  if (!upperFoodTypeIndex) {
+    // CASO PRANZO
+    if (bottomFoodTypeIndex == 0) {
+      for (let i = 0; i < lunchesDays[dayIndex].ingredients.length; i++) {
+        foodCardsHtml += `
+        <div class="card-single-ingredients">
+          <div class="card-ingredients-description">
+            <span class="ingrediens-title">${lunchesDays[dayIndex].ingredients[i].name}</span>
+            <span class="ingredients-grams">${lunchesDays[dayIndex].ingredients[i].grams}g</span>
+          </div>
+          <div class="card-ingredients-image">
+            
+          </div>
+        </div>`;
+      }
+    } // CASO CENA
+    else if (bottomFoodTypeIndex == 1) {
+      for (let i = 0; i < dinnersDays[dayIndex].ingredients.length; i++) {
+        foodCardsHtml += `
+        <div class="card-single-ingredients">
+          <div class="card-ingredients-description">
+            <span class="ingrediens-title">${dinnersDays[dayIndex].ingredients[i].name}</span>
+            <span class="ingredients-grams">${dinnersDays[dayIndex].ingredients[i].grams}g</span>
+          </div>
+          <div class="card-ingredients-image">
+            
+          </div>
+        </div>`;
+      }
+    } // CASO COLAZIONE
+    else {
+      for (let i = 0; i < breakfasts.length; i++) {
+        foodCardsHtml += `<h3>Proposta ${i + 1}</h3>`;
+        for (let j = 0; j < breakfasts[i].ingredients.length; j++) {
+          foodCardsHtml += `
+          <div class="card-single-ingredients">
+            <div class="card-ingredients-description">
+              <span class="ingrediens-title">${breakfasts[i].ingredients[j].name}</span>
+              <span class="ingredients-grams">${breakfasts[i].ingredients[j].grams}g</span>
+            </div>
+            <div class="card-ingredients-image">
+              
+            </div>
+          </div>`;
+        }
+      }
+    }
+  } // CASO MERENDA
+  else {
   }
   /* <img src="./img/5650776.png" alt="pizza" /> */
+  foodCardsHtml += `<div class="invisible-margin"></div>`;
   foodCardsContainer.innerHTML = foodCardsHtml;
 };
 
@@ -103,7 +146,7 @@ let dayIndex = 0;
 const days = printDays();
 
 // * OBJECT DECLARATIONS
-const lunches = [
+const lunchesDays = [
   {
     ingredients: [
       {
@@ -156,8 +199,60 @@ const lunches = [
       },
     ],
   },
+  {
+    ingredients: [
+      {
+        name: "Riso al burro",
+        grams: 100,
+      },
+      {
+        name: "Pesce o polpette",
+        grams: 230,
+      },
+      {
+        name: "Banana",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 120,
+      },
+      {
+        name: "Tiramisù",
+        grams: 200,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Riso alla marinara",
+        grams: 100,
+      },
+      {
+        name: "Condimento misto",
+        grams: 80,
+      },
+      {
+        name: "Parmigiano",
+        grams: "3 cucchiai",
+      },
+      {
+        name: "Triglie o salciccia",
+        grams: 200,
+      },
+      {
+        name: "Patate",
+        grams: 250,
+      },
+      {
+        name: "Crostata",
+        grams: 150,
+      },
+    ],
+  },
 ];
-const dinners = [
+const dinnersDays = [
   {
     ingredients: [
       {
@@ -202,9 +297,147 @@ const dinners = [
       },
     ],
   },
+  {
+    ingredients: [
+      {
+        name: "Grana",
+        grams: 70,
+      },
+      {
+        name: "Prosciutto crudo",
+        grams: 60,
+      },
+      {
+        name: "Pane",
+        grams: 150,
+      },
+      {
+        name: "Gelato",
+        grams: 170,
+      },
+      {
+        name: "Kiwi o arancia",
+        grams: 160,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Maiale",
+        grams: 210,
+      },
+      {
+        name: "Patatine fritte",
+        grams: 250,
+      },
+      {
+        name: "Gelato",
+        grams: 220,
+      },
+      {
+        name: "Pane",
+        grams: 140,
+      },
+    ],
+  },
 ];
-const breakfasts = [];
-const snacks = [];
+const breakfasts = [
+  {
+    ingredients: [
+      {
+        name: "Yogurt greco",
+        grams: 150,
+      },
+      {
+        name: "Panino o fette biscottate",
+        grams: 50,
+      },
+      {
+        name: "Burro o marmellata",
+        grams: "qb",
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Panino",
+        grams: 80,
+      },
+      {
+        name: "Prosciutto cotto",
+        grams: 80,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Frappè di frutta",
+        grams: 240,
+      },
+      {
+        name: "Panino o fette biscottate",
+        grams: 60,
+      },
+      {
+        name: "Burro o marmellata",
+        grams: "qb",
+      },
+    ],
+  },
+];
+const snacks = [
+  {
+    ingredients: [
+      {
+        name: "Crostata di frutta",
+        grams: 170,
+      },
+      {
+        name: "Succo di frutta",
+        grams: 150,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Gelato",
+        grams: 220,
+      },
+      {
+        name: "Frollini",
+        grams: 60,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Frutta a piacere",
+        grams: 220,
+      },
+      {
+        name: "Panino",
+        grams: 60,
+      },
+      {
+        name: "Marmellata",
+        grams: "qb",
+      },
+      {
+        name: "Pancake",
+        grams: 60,
+      },
+      {
+        name: "Noci",
+        grams: 30,
+      },
+    ],
+  },
+];
 
 // * LISTENER
 daysButton.addEventListener("click", () => {
