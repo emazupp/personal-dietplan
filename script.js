@@ -73,11 +73,14 @@ const updateFoodCardsContent = () => {
     // CASO PRANZO
     if (bottomFoodTypeIndex == 0) {
       for (let i = 0; i < lunchesDays[dayIndex].ingredients.length; i++) {
+        const grams = isNaN(lunchesDays[dayIndex].ingredients[i].grams)
+          ? lunchesDays[dayIndex].ingredients[i].grams
+          : lunchesDays[dayIndex].ingredients[i].grams + " g";
         foodCardsHtml += `
         <div class="card-single-ingredients">
           <div class="card-ingredients-description">
             <span class="ingrediens-title">${lunchesDays[dayIndex].ingredients[i].name}</span>
-            <span class="ingredients-grams">${lunchesDays[dayIndex].ingredients[i].grams}g</span>
+            <span class="ingredients-grams">${grams}</span>
           </div>
           <div class="card-ingredients-image">
             
@@ -87,11 +90,14 @@ const updateFoodCardsContent = () => {
     } // CASO CENA
     else if (bottomFoodTypeIndex == 1) {
       for (let i = 0; i < dinnersDays[dayIndex].ingredients.length; i++) {
+        const grams = isNaN(dinnersDays[dayIndex].ingredients[i].grams)
+          ? dinnersDays[dayIndex].ingredients[i].grams
+          : dinnersDays[dayIndex].ingredients[i].grams + " g";
         foodCardsHtml += `
         <div class="card-single-ingredients">
           <div class="card-ingredients-description">
             <span class="ingrediens-title">${dinnersDays[dayIndex].ingredients[i].name}</span>
-            <span class="ingredients-grams">${dinnersDays[dayIndex].ingredients[i].grams}g</span>
+            <span class="ingredients-grams">${grams}</span>
           </div>
           <div class="card-ingredients-image">
             
@@ -101,13 +107,16 @@ const updateFoodCardsContent = () => {
     } // CASO COLAZIONE
     else {
       for (let i = 0; i < breakfasts.length; i++) {
-        foodCardsHtml += `<h3>Proposta ${i + 1}</h3>`;
+        foodCardsHtml += `<h3 class="proposal-title">Proposta ${i + 1}</h3>`;
         for (let j = 0; j < breakfasts[i].ingredients.length; j++) {
+          const grams = isNaN(breakfasts[i].ingredients[i].grams)
+            ? breakfasts[i].ingredients[j].grams
+            : breakfasts[i].ingredients[j].grams + " g";
           foodCardsHtml += `
           <div class="card-single-ingredients">
             <div class="card-ingredients-description">
               <span class="ingrediens-title">${breakfasts[i].ingredients[j].name}</span>
-              <span class="ingredients-grams">${breakfasts[i].ingredients[j].grams}g</span>
+              <span class="ingredients-grams">${grams}</span>
             </div>
             <div class="card-ingredients-image">
               
@@ -118,6 +127,24 @@ const updateFoodCardsContent = () => {
     }
   } // CASO MERENDA
   else {
+    for (let i = 0; i < snacks.length; i++) {
+      foodCardsHtml += `<h3 class="proposal-title">Proposta ${i + 1}</h3>`;
+      for (let j = 0; j < snacks[i].ingredients.length; j++) {
+        const grams = isNaN(snacks[i].ingredients[j].grams)
+          ? snacks[i].ingredients[j].grams
+          : snacks[i].ingredients[j].grams + " g";
+        foodCardsHtml += `
+        <div class="card-single-ingredients">
+          <div class="card-ingredients-description">
+            <span class="ingrediens-title">${snacks[i].ingredients[j].name}</span>
+            <span class="ingredients-grams">${grams}</span>
+          </div>
+          <div class="card-ingredients-image">
+            
+          </div>
+        </div>`;
+      }
+    }
   }
   /* <img src="./img/5650776.png" alt="pizza" /> */
   foodCardsHtml += `<div class="invisible-margin"></div>`;
@@ -145,7 +172,7 @@ let bottomFoodTypeIndex = 0;
 let dayIndex = 0;
 const days = printDays();
 
-// * OBJECT DECLARATIONS
+// * OBJECT DECLARATIONS - PIANO NUTRIZIONE 10GG
 const lunchesDays = [
   {
     ingredients: [
@@ -251,7 +278,160 @@ const lunchesDays = [
       },
     ],
   },
+  {
+    ingredients: [
+      {
+        name: "Penne in salsa rosa",
+        grams: 100,
+      },
+      {
+        name: "Gamberi",
+        grams: 80,
+      },
+      {
+        name: "Parmigiano",
+        grams: "3 cucchiai",
+      },
+      {
+        name: "Pesce spada o sogliola",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 100,
+      },
+      {
+        name: "Crostata",
+        grams: 160,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta all'amatriciana",
+        grams: 100,
+      },
+      {
+        name: "Condimento",
+        grams: 70,
+      },
+      {
+        name: "Pollo allo spiedo",
+        grams: 220,
+      },
+      {
+        name: "Pane",
+        grams: 120,
+      },
+      {
+        name: "Gelato",
+        grams: 160,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta prosciutto e panna",
+        grams: 100,
+      },
+      {
+        name: "Condimento",
+        grams: 80,
+      },
+      {
+        name: "Parmigiano",
+        grams: "3 cucchiai",
+      },
+      {
+        name: "Vitello o salsiccia",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 140,
+      },
+      {
+        name: "Crostata",
+        grams: 180,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta all'amatriciana",
+        grams: 100,
+      },
+      {
+        name: "Condimento",
+        grams: 80,
+      },
+      {
+        name: "Triglie o gambero",
+        grams: 220,
+      },
+      {
+        name: "Purè di patate",
+        grams: 200,
+      },
+      {
+        name: "Banane",
+        grams: 180,
+      },
+      {
+        name: "Pane",
+        grams: 80,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta all'uovo",
+        grams: 100,
+      },
+      {
+        name: "Pomodoro",
+        grams: 80,
+      },
+      {
+        name: "Vitello",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 100,
+      },
+      {
+        name: "Crostata",
+        grams: 150,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pasta al forno",
+        grams: 200,
+      },
+      {
+        name: "Costata di vitello",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 100,
+      },
+      {
+        name: "Macedonia",
+        grams: 200,
+      },
+    ],
+  },
 ];
+
 const dinnersDays = [
   {
     ingredients: [
@@ -341,7 +521,140 @@ const dinnersDays = [
       },
     ],
   },
+  {
+    ingredients: [
+      {
+        name: "Porchetta",
+        grams: 90,
+      },
+      {
+        name: "Mozzarella",
+        grams: 90,
+      },
+      {
+        name: "Pane",
+        grams: 150,
+      },
+      {
+        name: "Melone",
+        grams: 200,
+      },
+      {
+        name: "Crostata",
+        grams: 160,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Pizza ben condita",
+        grams: 250,
+      },
+      {
+        name: "Macedonia",
+        grams: 200,
+      },
+      {
+        name: "Tartufo di gelato",
+        grams: 200,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Omelette",
+        grams: "2 uova",
+      },
+      {
+        name: "Mozzarella",
+        grams: 100,
+      },
+      {
+        name: "Pane",
+        grams: 150,
+      },
+      {
+        name: "Banana",
+        grams: 200,
+      },
+      {
+        name: "Noci",
+        grams: 50,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Dentice o maiale",
+        grams: 220,
+      },
+      {
+        name: "Pera",
+        grams: 200,
+      },
+      {
+        name: "Pane",
+        grams: 130,
+      },
+      {
+        name: "Gelato",
+        grams: 150,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Uova",
+        grams: "2",
+      },
+      {
+        name: "Mozzarella",
+        grams: 100,
+      },
+      {
+        name: "Pane",
+        grams: 160,
+      },
+      {
+        name: "Banana",
+        grams: 200,
+      },
+      {
+        name: "Crostata",
+        grams: 150,
+      },
+    ],
+  },
+  {
+    ingredients: [
+      {
+        name: "Prosciutto crudo",
+        grams: 80,
+      },
+      {
+        name: "Mozzarella",
+        grams: 80,
+      },
+      {
+        name: "Pane",
+        grams: 140,
+      },
+      {
+        name: "Cremè caramel",
+        grams: 200,
+      },
+      {
+        name: "Macedonia",
+        grams: 220,
+      },
+    ],
+  },
 ];
+
 const breakfasts = [
   {
     ingredients: [
@@ -388,6 +701,7 @@ const breakfasts = [
     ],
   },
 ];
+
 const snacks = [
   {
     ingredients: [

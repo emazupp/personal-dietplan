@@ -219,6 +219,11 @@ img {
   height: 100px;
 }
 
+.proposal-title {
+  margin-bottom: 1.5rem;
+  color: #776ad4;
+}
+
 /* media query */
 
 @media screen and (min-width: 400px) {
