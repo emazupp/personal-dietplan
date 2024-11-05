@@ -109,7 +109,7 @@ const updateFoodCardsContent = () => {
       for (let i = 0; i < breakfasts.length; i++) {
         foodCardsHtml += `<h3 class="proposal-title">Proposta ${i + 1}</h3>`;
         for (let j = 0; j < breakfasts[i].ingredients.length; j++) {
-          const grams = isNaN(breakfasts[i].ingredients[i].grams)
+          const grams = isNaN(breakfasts[i].ingredients[j].grams)
             ? breakfasts[i].ingredients[j].grams
             : breakfasts[i].ingredients[j].grams + " g";
           foodCardsHtml += `
